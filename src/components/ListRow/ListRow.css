@@ -1,0 +1,79 @@
+.trama-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.trama-list__item + .trama-list__item {
+  border-top: 1px solid var(--color-border-default);
+}
+
+.trama-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  min-height: 64px;
+  padding: var(--space-12);
+  border: 0;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--motion-fast);
+}
+.trama-row:hover {
+  background: var(--color-bg-subtle);
+}
+
+/* El foco va por dentro para que no lo corte el borde redondeado de la lista */
+.trama-row:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: calc(var(--focus-width) * -2);
+}
+
+.trama-row__text {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+.trama-row__title {
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-14);
+  font-weight: 500;
+}
+.trama-row__detail {
+  overflow: hidden;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-12);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trama-row .trama-chip {
+  flex: none;
+}
+
+/* Seleccionada: fondo de marca + barra lateral (no solo color) */
+.trama-row--selected,
+.trama-row--selected:hover {
+  background: var(--color-action-subtle);
+}
+.trama-row--selected::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--color-action-primary);
+}
+.trama-row--selected .trama-avatar {
+  background: var(--color-bg-surface);
+}

@@ -1,0 +1,23 @@
+.trama-avatar {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--color-action-subtle);
+  color: var(--color-action-on-subtle);
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+}
+
+.trama-avatar--s {
+  width: var(--size-32);
+  height: var(--size-32);
+  font-size: var(--font-size-12);
+}
+.trama-avatar--m {
+  width: var(--size-40);
+  height: var(--size-40);
+  font-size: var(--font-size-14);
+}

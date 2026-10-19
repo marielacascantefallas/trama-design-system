@@ -1,0 +1,11 @@
+/* Trama · punto de entrada. Generado por build-tokens.mjs */
+@import './primitives.css';
+@import './brand-hilo.css';
+@import './brand-ruta.css';
+@import './semantic-light.css';
+@import './semantic-dark.css';
+
+/* WCAG 2.3.3: sin animaciones si la persona lo pide en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; --motion-base: 0ms; --motion-slow: 0ms; }
+}

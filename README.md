@@ -1,0 +1,78 @@
+# Trama
+
+Design system multimarca para dos productos B2B:
+
+- **Hilo**: inbox compartido de WhatsApp para equipos pequeños de servicio.
+- **Ruta**: panel de reservas para operadores de tours en Costa Rica.
+
+Una sola base de tokens y componentes; cada producto es un tema (marca × modo claro/oscuro).
+
+## Flujo
+
+```
+Figma (variables con modos)  ⇄  tokens/trama-tokens.json  (formato DTCG / Tokens Studio)
+                                         │  npm run tokens  (Style Dictionary 4)
+                                         ▼
+                         src/styles/tokens/*.css  +  tokens.ts
+                                         │
+                                         ▼
+                         Componentes React  →  Storybook
+```
+
+## Comandos
+
+```bash
+npm install
+npm run storybook        # desarrollo en http://localhost:6006
+npm run build-storybook  # compila el sitio estático
+npm run tokens           # regenera las variables CSS desde el JSON
+npm run typecheck
+```
+
+Cada push a `main` publica Storybook en GitHub Pages (`.github/workflows/storybook.yml`).
+
+## Tokens en capas
+
+| Capa | Archivo | Selector |
+|---|---|---|
+| Primitivos | `primitives.css` | `:root` |
+| Marca Hilo (por defecto) | `brand-hilo.css` | `:root, [data-brand="hilo"]` |
+| Marca Ruta | `brand-ruta.css` | `[data-brand="ruta"]` |
+| Semánticos claro | `semantic-light.css` | `:root, [data-mode="light"]` |
+| Semánticos oscuro | `semantic-dark.css` | `[data-mode="dark"]` |
+
+Los semánticos apuntan a `var(--brand-*)`, así que la marca y el modo deben ir en el mismo elemento. `TramaTheme` lo hace por ti:
+
+```tsx
+<TramaTheme brand="ruta" mode="dark">
+  <Button variant="primary">Nueva reserva</Button>
+</TramaTheme>
+```
+
+## Componentes
+
+| Componente | Props principales |
+|---|---|
+| `Button` | `variant` primary/secondary/ghost · `size` s/m/l · `disabled` |
+| `TextField` | `label` (obligatoria) · `hint` · `error` · `size` s/m/l · `disabled` |
+| `StatusChip` | `tone` success/warning/danger/neutral |
+| `Avatar` | `name` · `size` s/m · `decorative` |
+| `List` + `ListRow` | `title` · `detail` · `status` · `selected` · `leading` |
+
+## Accesibilidad (WCAG 2.2 AA)
+
+- Contraste verificado en los 4 temas: texto ≥ 4.5:1, bordes de controles y foco ≥ 3:1.
+- Foco visible con anillo separado 2 px; área mínima de 24 px; tamaños S/M/L de 32/40/48 px.
+- El color nunca es la única señal: errores con texto, chips con etiqueta, fila seleccionada con barra lateral y `aria-current`.
+- Animaciones desactivadas con `prefers-reduced-motion`.
+- Pruebas automáticas con axe en el panel Accessibility de Storybook.
+
+## Archivos
+
+- `tokens/trama-tokens.json`: fuente de verdad de los tokens.
+- `scripts/generate-tokens.py`: genera el JSON y valida el contraste de los 4 temas.
+- `scripts/build-tokens.mjs`: Style Dictionary, genera las variables CSS.
+
+---
+
+Diseño y construcción: Mariella Cascante.

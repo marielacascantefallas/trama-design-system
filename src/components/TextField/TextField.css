@@ -1,0 +1,77 @@
+.trama-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-family: inherit;
+}
+
+.trama-field__label {
+  font-size: var(--font-size-12);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.trama-field__input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  transition: border-color var(--motion-fast);
+}
+.trama-field__input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.trama-field--s .trama-field__input {
+  height: var(--size-control-sm);
+  padding: 0 var(--space-12);
+  font-size: var(--font-size-14);
+}
+.trama-field--m .trama-field__input {
+  height: var(--size-control-md);
+  padding: 0 var(--space-12);
+  font-size: var(--font-size-14);
+}
+.trama-field--l .trama-field__input {
+  height: var(--size-control-lg);
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-16);
+}
+
+.trama-field__input:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.trama-field__message {
+  margin: 0;
+  font-size: var(--font-size-12);
+  color: var(--color-text-secondary);
+}
+
+/* Error: borde de 2 px + mensaje (WCAG 1.4.1 y 3.3.1) */
+.trama-field--error .trama-field__input {
+  border-color: var(--color-status-danger);
+  box-shadow: inset 0 0 0 1px var(--color-status-danger);
+}
+.trama-field--error .trama-field__message {
+  color: var(--color-status-danger);
+}
+
+/* Deshabilitado. La etiqueta se atenúa; el mensaje no, porque suele
+   explicar por qué el campo no se puede editar y debe leerse (WCAG 1.4.3). */
+.trama-field--disabled .trama-field__label {
+  color: var(--color-text-disabled);
+}
+.trama-field__input:disabled {
+  background: var(--color-bg-disabled);
+  border-color: var(--color-border-default);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+.trama-field__input:disabled::placeholder {
+  color: var(--color-text-disabled);
+}

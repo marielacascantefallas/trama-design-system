@@ -1,0 +1,8 @@
+.trama-theme {
+  font-family: var(--font-family-sans), system-ui, sans-serif;
+  color: var(--color-text-primary);
+}
+
+.trama-theme--surface {
+  background: var(--color-bg-canvas);
+}

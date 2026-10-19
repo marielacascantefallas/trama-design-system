@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root, [data-brand="hilo"] {
+  --radius-control: var(--radius-10);
+  --radius-card: var(--radius-14);
+  --brand-50: var(--color-anil-50);
+  --brand-100: var(--color-anil-100);
+  --brand-200: var(--color-anil-200);
+  --brand-300: var(--color-anil-300);
+  --brand-400: var(--color-anil-400);
+  --brand-500: var(--color-anil-500);
+  --brand-600: var(--color-anil-600);
+  --brand-700: var(--color-anil-700);
+  --brand-800: var(--color-anil-800);
+  --brand-900: var(--color-anil-900);
+}

@@ -1,0 +1,38 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root, [data-mode="light"] {
+  --color-bg-canvas: var(--color-piedra-50);
+  --color-bg-surface: var(--color-piedra-0);
+  --color-bg-subtle: var(--color-piedra-100);
+  --color-bg-disabled: var(--color-piedra-100);
+  --color-text-primary: var(--color-piedra-900);
+  --color-text-disabled: var(--color-piedra-400);
+  --color-text-secondary: var(--color-piedra-600);
+  --color-text-placeholder: var(--color-piedra-600);
+  --color-border-default: var(--color-piedra-200);
+  --color-border-control: var(--color-piedra-500);
+  --color-action-on-primary: var(--color-piedra-0);
+  --color-status-success: var(--color-verde-600);
+  --color-status-success-bg: var(--color-verde-50);
+  --color-status-warning: var(--color-ambar-600);
+  --color-status-warning-bg: var(--color-ambar-50);
+  --color-status-danger: var(--color-rojo-600);
+  --color-status-danger-bg: var(--color-rojo-50);
+  --size-target-min: var(--size-24);
+  --size-control-sm: var(--size-32);
+  --size-control-md: var(--size-40);
+  --size-control-lg: var(--size-48);
+  --focus-width: var(--border-width-2);
+  --focus-offset: var(--border-width-2);
+  --motion-fast: var(--duration-120);
+  --motion-base: var(--duration-200);
+  --motion-slow: var(--duration-320);
+  --color-text-brand: var(--brand-700);
+  --color-action-primary: var(--brand-600);
+  --color-action-primary-hover: var(--brand-700);
+  --color-action-subtle: var(--brand-50);
+  --color-action-on-subtle: var(--brand-700);
+  --color-focus-ring: var(--brand-600);
+}

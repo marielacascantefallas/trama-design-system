@@ -1,0 +1,82 @@
+.trama-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  min-width: var(--size-target-min);
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--motion-fast),
+    border-color var(--motion-fast);
+}
+
+/* Tamaños */
+.trama-button--s {
+  height: var(--size-control-sm);
+  padding: 0 var(--space-12);
+  font-size: var(--font-size-14);
+}
+.trama-button--m {
+  height: var(--size-control-md);
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-14);
+}
+.trama-button--l {
+  height: var(--size-control-lg);
+  padding: 0 var(--space-20);
+  font-size: var(--font-size-16);
+}
+
+/* Primario */
+.trama-button--primary {
+  background: var(--color-action-primary);
+  color: var(--color-action-on-primary);
+}
+.trama-button--primary:hover:not(:disabled) {
+  background: var(--color-action-primary-hover);
+}
+
+/* Secundario */
+.trama-button--secondary {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-control);
+  color: var(--color-text-primary);
+}
+.trama-button--secondary:hover:not(:disabled) {
+  background: var(--color-bg-subtle);
+}
+
+/* Fantasma */
+.trama-button--ghost {
+  background: transparent;
+  color: var(--color-text-brand);
+}
+.trama-button--ghost:hover:not(:disabled) {
+  background: var(--color-action-subtle);
+}
+
+/* Foco (WCAG 2.4.7): anillo separado 2 px, igual en los tres estilos */
+.trama-button:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Deshabilitado */
+.trama-button:disabled {
+  background: var(--color-bg-disabled);
+  border-color: transparent;
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+.trama-button--secondary:disabled {
+  border-color: var(--color-border-default);
+}
+.trama-button--ghost:disabled {
+  background: transparent;
+}
