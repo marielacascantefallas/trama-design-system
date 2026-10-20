@@ -8,9 +8,11 @@
     "tokens": "node scripts/build-tokens.mjs",
     "storybook": "npm run tokens && storybook dev -p 6006",
     "build-storybook": "npm run tokens && storybook build -o storybook-static",
-    "typecheck": "tsc --noEmit && tsc --noEmit -p apps/hilo",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p apps/hilo && tsc --noEmit -p apps/ruta",
     "dev-hilo": "vite --config apps/hilo/vite.config.ts",
-    "build-hilo": "vite build --config apps/hilo/vite.config.ts"
+    "build-hilo": "vite build --config apps/hilo/vite.config.ts",
+    "dev-ruta": "vite --config apps/ruta/vite.config.ts",
+    "build-ruta": "vite build --config apps/ruta/vite.config.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

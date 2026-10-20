@@ -82,7 +82,7 @@ export function Team() {
               </h2>
               <span className="hilo-caption">Límite sugerido: {LOAD_LIMIT} chats activos</span>
             </div>
-            <div className="hilo-table-wrap">
+            <div className="hilo-table-wrap" role="region" aria-label="Carga por persona" tabIndex={0}>
               <table className="hilo-table">
                 <thead>
                   <tr>

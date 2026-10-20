@@ -42,6 +42,17 @@ npm run build-hilo   # se publica en storybook-static/hilo
 
 En línea: https://marielacascantefallas.github.io/trama-design-system/hilo/
 
+## Prototipo de Ruta
+
+`apps/ruta` es el panel de reservas para operadores de tours en bote, con el tema Ruta: salidas de hoy, detalle y check-in móvil, nueva reserva leída por IA, reprogramar por clima, calendario y pagos SINPE.
+
+```bash
+npm run dev-ruta
+npm run build-ruta   # se publica en storybook-static/ruta
+```
+
+En línea: https://marielacascantefallas.github.io/trama-design-system/ruta/
+
 ## Tokens en capas
 
 | Capa | Archivo | Selector |

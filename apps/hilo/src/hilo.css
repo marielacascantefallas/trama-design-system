@@ -1172,6 +1172,9 @@ a {
 }
 
 @media (max-width: 760px) {
+  .hilo-metrics .trama-metric__value {
+    font-size: var(--font-size-20);
+  }
   .hilo-app {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
