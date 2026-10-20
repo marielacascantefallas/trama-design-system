@@ -31,6 +31,17 @@ npm run typecheck
 
 Cada push a `main` publica Storybook en GitHub Pages (`.github/workflows/storybook.yml`).
 
+## Prototipo de Hilo
+
+`apps/hilo` es un prototipo navegable de Hilo construido solo con los componentes de Trama: bandeja y conversación, vista del cliente, asignación con sugerencia de IA, vista del dueño, ajustes y versión móvil.
+
+```bash
+npm run dev-hilo     # desarrollo
+npm run build-hilo   # se publica en storybook-static/hilo
+```
+
+En línea: https://marielacascantefallas.github.io/trama-design-system/hilo/
+
 ## Tokens en capas
 
 | Capa | Archivo | Selector |

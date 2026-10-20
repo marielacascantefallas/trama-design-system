@@ -29,13 +29,15 @@ export interface ListRowProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
   selected?: boolean;
   /** Contenido a la izquierda. Por defecto, un avatar con las iniciales del título. */
   leading?: ReactNode;
+  /** Hora o fecha del último movimiento, arriba a la derecha: "9:38", "Ayer", "14 oct". */
+  time?: string;
 }
 
 /**
  * Fila compartida por Hilo (chats) y Ruta (reservas). Es un botón dentro
  * de un `<li>`, así que se navega con Tab y se activa con Enter o Espacio.
  */
-export function ListRow({ title, detail, status, selected = false, leading, className, ...rest }: ListRowProps) {
+export function ListRow({ title, detail, status, selected = false, leading, time, className, ...rest }: ListRowProps) {
   return (
     <li className="trama-list__item">
       <button
@@ -49,7 +51,12 @@ export function ListRow({ title, detail, status, selected = false, leading, clas
           <span className="trama-row__title">{title}</span>
           {detail && <span className="trama-row__detail">{detail}</span>}
         </span>
-        {status && <StatusChip tone={status.tone}>{status.label}</StatusChip>}
+        {(time || status) && (
+          <span className="trama-row__meta">
+            {time && <span className="trama-row__time">{time}</span>}
+            {status && <StatusChip tone={status.tone}>{status.label}</StatusChip>}
+          </span>
+        )}
       </button>
     </li>
   );

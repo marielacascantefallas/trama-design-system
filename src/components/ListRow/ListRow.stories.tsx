@@ -12,6 +12,7 @@ const meta = {
     title: 'Laura Mora',
     detail: 'Adjunté la factura de octubre',
     status: { tone: 'success', label: 'Asignado' },
+    time: '9:21',
     selected: false,
     onClick: fn(),
   },

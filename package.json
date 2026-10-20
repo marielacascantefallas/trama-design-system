@@ -8,7 +8,9 @@
     "tokens": "node scripts/build-tokens.mjs",
     "storybook": "npm run tokens && storybook dev -p 6006",
     "build-storybook": "npm run tokens && storybook build -o storybook-static",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit && tsc --noEmit -p apps/hilo",
+    "dev-hilo": "vite --config apps/hilo/vite.config.ts",
+    "build-hilo": "vite build --config apps/hilo/vite.config.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -24,6 +26,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "lucide-react": "^0.460.0",
     "storybook": "^8.6.14",
     "storybook-addon-pseudo-states": "^4.0.4",
     "style-dictionary": "^4.4.0",
