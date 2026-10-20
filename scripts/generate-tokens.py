@@ -14,7 +14,7 @@ prim={"color":{n:{str(k):C(v) for k,v in r.items()} for n,r in [("anil",anil),("
  "borderWidth":{"1":D("1px"),"2":D("2px")},
  "duration":{"0":D("0ms","duration"),"120":D("120ms","duration"),"200":D("200ms","duration"),"320":D("320ms","duration")},
  "fontFamily":{"sans":{"$type":"fontFamily","$value":"Inter"}},
- "fontSize":{str(k):D(f"{k}px") for k in [12,14,16,18,20,24,32]},
+ "fontSize":{str(k):D(f"{k}px") for k in [12,14,16,18,20,24,28,32]},
  "fontWeight":{"regular":{"$type":"fontWeight","$value":400},"medium":{"$type":"fontWeight","$value":500},"semibold":{"$type":"fontWeight","$value":600}}}
 def brand(ramp,r1,r2):
   return {"brand":{s:C("{color.%s.%s}"%(ramp,s)) for s in ["50","100","200","300","400","500","600","700","800","900"]},
@@ -28,6 +28,7 @@ def sem(m):
    "border":{"default":C(r("{color.piedra.200}","{color.piedra.700}")),"control":C(r("{color.piedra.500}","{color.piedra.400}"))},
    "action":{"primary":C(r("{brand.600}","{brand.400}")),"primary-hover":C(r("{brand.700}","{brand.300}")),"on-primary":C(r("{color.piedra.0}","{color.piedra.950}")),"subtle":C(r("{brand.50}","{brand.900}")),"on-subtle":C(r("{brand.700}","{brand.200}"))},
    "focus":{"ring":C(r("{brand.600}","{brand.300}"))},
+   "overlay":{"scrim":C(r("#12121F73","#00000099"))},
    "status":{"success":C(r("{color.verde.600}","{color.verde.300}")),"success-bg":C(r("{color.verde.50}","{color.verde.900}")),"warning":C(r("{color.ambar.600}","{color.ambar.300}")),"warning-bg":C(r("{color.ambar.50}","{color.ambar.900}")),"danger":C(r("{color.rojo.600}","{color.rojo.300}")),"danger-bg":C(r("{color.rojo.50}","{color.rojo.900}"))}},
   "focus":{"width":D("{borderWidth.2}"),"offset":D("{borderWidth.2}")},
   "size":{"target-min":D("{size.24}"),"control-sm":D("{size.32}"),"control-md":D("{size.40}"),"control-lg":D("{size.48}")},
@@ -59,7 +60,7 @@ for t in themes:
     assert m.group(1) in tok,(t["id"],v); return res(tok[m.group(1)],d+1)
   R={k:res(v) for k,v in tok.items()}
   g=lambda k:R["color."+k]
-  checks=[("text.primary","bg.surface",4.5),("text.secondary","bg.canvas",4.5),("text.placeholder","bg.surface",4.5),("action.on-primary","action.primary",4.5),("action.on-subtle","action.subtle",4.5),("status.success","status.success-bg",4.5),("status.warning","status.warning-bg",4.5),("border.control","bg.canvas",3),("focus.ring","bg.canvas",3),("text.brand","bg.surface",4.5),("text.brand","bg.canvas",4.5),("text.brand","action.subtle",4.5),("text.primary","bg.subtle",4.5),("status.danger","bg.surface",4.5),("status.danger","bg.canvas",4.5),("status.danger","status.danger-bg",4.5)]
+  checks=[("text.primary","bg.surface",4.5),("text.secondary","bg.canvas",4.5),("text.placeholder","bg.surface",4.5),("action.on-primary","action.primary",4.5),("action.on-subtle","action.subtle",4.5),("status.success","status.success-bg",4.5),("status.warning","status.warning-bg",4.5),("border.control","bg.canvas",3),("focus.ring","bg.canvas",3),("text.brand","bg.surface",4.5),("text.brand","bg.canvas",4.5),("text.brand","action.subtle",4.5),("text.primary","bg.subtle",4.5),("status.danger","bg.surface",4.5),("status.danger","bg.canvas",4.5),("status.danger","status.danger-bg",4.5),("text.secondary","bg.subtle",4.5)]
   worst=min((cr(g(a),g(b)),a) for a,b,_ in checks)
   fails=[a for a,b,m in checks if cr(g(a),g(b))<m]
   print(t["name"],"tokens:",len(R),"| fallas:",fails or "ninguna","| peor:",round(worst[0],2),worst[1])

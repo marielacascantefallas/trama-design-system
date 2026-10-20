@@ -1,0 +1,41 @@
+.trama-metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-16);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+.trama-metric dd {
+  margin: 0;
+}
+
+.trama-metric__label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-medium);
+}
+
+.trama-metric__value {
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.trama-metric__note {
+  font-size: var(--font-size-12);
+}
+.trama-metric__note--neutral {
+  color: var(--color-text-secondary);
+}
+.trama-metric__note--danger {
+  color: var(--color-status-danger);
+}
+.trama-metric__note--success {
+  color: var(--color-status-success);
+}

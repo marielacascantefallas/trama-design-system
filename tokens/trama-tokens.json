@@ -339,6 +339,10 @@
         "$type": "dimension",
         "$value": "24px"
       },
+      "28": {
+        "$type": "dimension",
+        "$value": "28px"
+      },
       "32": {
         "$type": "dimension",
         "$value": "32px"
@@ -547,6 +551,12 @@
           "$value": "{brand.600}"
         }
       },
+      "overlay": {
+        "scrim": {
+          "$type": "color",
+          "$value": "#12121F73"
+        }
+      },
       "status": {
         "success": {
           "$type": "color",
@@ -695,6 +705,12 @@
         "ring": {
           "$type": "color",
           "$value": "{brand.300}"
+        }
+      },
+      "overlay": {
+        "scrim": {
+          "$type": "color",
+          "$value": "#00000099"
         }
       },
       "status": {

@@ -58,6 +58,11 @@ Los semánticos apuntan a `var(--brand-*)`, así que la marca y el modo deben ir
 | `StatusChip` | `tone` success/warning/danger/neutral |
 | `Avatar` | `name` · `size` s/m · `decorative` |
 | `List` + `ListRow` | `title` · `detail` · `status` · `selected` · `leading` |
+| `AICard` | `title` · `meta` · `actions` · insignia de texto "IA" |
+| `MessageBubble` | `side` incoming/outgoing · `time` · `author` |
+| `Tabs` + `TabPanel` | `items` (`label`, `count`) · `value` · `onChange` · flechas, Inicio y Fin |
+| `MetricCard` | `label` · `value` · `note` · `noteTone` neutral/danger/success |
+| `Switch` | `label` (obligatoria) · `description` · `checked` · `onChange` · `disabled` |
 
 ## Accesibilidad (WCAG 2.2 AA)
 

@@ -3,6 +3,7 @@
  */
 
 [data-mode="dark"] {
+  --color-overlay-scrim: #00000099;
   --color-bg-canvas: var(--color-piedra-950);
   --color-bg-surface: var(--color-piedra-900);
   --color-bg-subtle: var(--color-piedra-800);

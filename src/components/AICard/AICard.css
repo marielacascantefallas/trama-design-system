@@ -1,0 +1,56 @@
+.trama-ai {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-12);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-primary);
+}
+
+.trama-ai__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.trama-ai__badge {
+  flex: none;
+  padding: 2px 6px;
+  border-radius: var(--radius-4);
+  background: var(--color-action-subtle);
+  color: var(--color-text-brand);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-semibold);
+  line-height: 16px;
+}
+
+.trama-ai__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  line-height: 20px;
+}
+
+.trama-ai__meta {
+  flex: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-12);
+}
+
+.trama-ai__body {
+  font-size: var(--font-size-14);
+  line-height: 20px;
+}
+.trama-ai__body > p {
+  margin: 0;
+}
+
+.trama-ai__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding-top: var(--space-4);
+}

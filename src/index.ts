@@ -1,4 +1,5 @@
 import './styles/tokens/trama.css';
+import './styles/utilities.css';
 
 export { TramaTheme } from './components/TramaTheme/TramaTheme';
 export type { TramaThemeProps, Brand, Mode } from './components/TramaTheme/TramaTheme';
@@ -12,5 +13,15 @@ export { Avatar, initialsFrom } from './components/Avatar/Avatar';
 export type { AvatarProps } from './components/Avatar/Avatar';
 export { List, ListRow } from './components/ListRow/ListRow';
 export type { ListProps, ListRowProps } from './components/ListRow/ListRow';
+export { AICard } from './components/AICard/AICard';
+export type { AICardProps } from './components/AICard/AICard';
+export { MessageBubble } from './components/MessageBubble/MessageBubble';
+export type { MessageBubbleProps, BubbleSide } from './components/MessageBubble/MessageBubble';
+export { Tabs, TabPanel } from './components/Tabs/Tabs';
+export type { TabsProps, TabPanelProps, TabItem } from './components/Tabs/Tabs';
+export { MetricCard } from './components/MetricCard/MetricCard';
+export type { MetricCardProps, MetricNoteTone } from './components/MetricCard/MetricCard';
+export { Switch } from './components/Switch/Switch';
+export type { SwitchProps } from './components/Switch/Switch';
 export { tokens } from './styles/tokens/tokens';
 export type { TokenName } from './styles/tokens/tokens';
