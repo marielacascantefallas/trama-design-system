@@ -53,6 +53,22 @@ npm run build-ruta   # se publica en storybook-static/ruta
 
 En línea: https://marielacascantefallas.github.io/trama-design-system/ruta/
 
+## Laboratorio: Generador de temas
+
+`apps/lab-temas` tiene dos pestañas:
+
+- **Crear desde un color.** Abre el color en diez pasos con la curva de luz de Añil y Atardecer (OKLCH), lo asigna a los tokens semánticos y prueba las mismas 17 parejas que revisa `scripts/generate-tokens.py`. La vista previa usa los componentes reales de Trama. Exporta CSS y tokens DTCG.
+- **Revisar mi tema.** Lee un `.css` con variables o un `.json` de tokens (DTCG o Tokens Studio, con `$themes`), adivina el rol de cada color, revisa el contraste y propone arreglos: primero un paso que ya exista en la escala de la marca, si no, mueve solo la luz. Descarga el archivo corregido con los mismos nombres.
+
+Todo corre en el navegador. Su sistema visual está en `apps/lab-temas/DESIGN.md`.
+
+```bash
+npm run dev-lab
+npm run build-lab   # se publica en storybook-static/lab/temas
+```
+
+En línea: https://marielacascantefallas.github.io/trama-design-system/lab/temas/
+
 ## Tokens en capas
 
 | Capa | Archivo | Selector |

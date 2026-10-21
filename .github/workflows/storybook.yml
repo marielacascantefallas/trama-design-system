@@ -28,6 +28,7 @@ jobs:
       - run: npm run build-storybook
       - run: npm run build-hilo
       - run: npm run build-ruta
+      - run: npm run build-lab
       - uses: actions/upload-pages-artifact@v3
         with:
           path: storybook-static
