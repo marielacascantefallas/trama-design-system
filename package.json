@@ -8,13 +8,15 @@
     "tokens": "node scripts/build-tokens.mjs",
     "storybook": "npm run tokens && storybook dev -p 6006",
     "build-storybook": "npm run tokens && storybook build -o storybook-static",
-    "typecheck": "tsc --noEmit && tsc --noEmit -p apps/hilo && tsc --noEmit -p apps/ruta && tsc --noEmit -p apps/lab-temas",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p apps/hilo && tsc --noEmit -p apps/ruta && tsc --noEmit -p apps/lab-temas && tsc --noEmit -p apps/lab-deshacer",
     "dev-hilo": "vite --config apps/hilo/vite.config.ts",
     "build-hilo": "vite build --config apps/hilo/vite.config.ts",
     "dev-ruta": "vite --config apps/ruta/vite.config.ts",
     "build-ruta": "vite build --config apps/ruta/vite.config.ts",
     "dev-lab": "vite --config apps/lab-temas/vite.config.ts",
-    "build-lab": "vite build --config apps/lab-temas/vite.config.ts"
+    "build-lab": "vite build --config apps/lab-temas/vite.config.ts && vite build --config apps/lab-deshacer/vite.config.ts",
+    "dev-lab-deshacer": "vite --config apps/lab-deshacer/vite.config.ts",
+    "build-lab-deshacer": "vite build --config apps/lab-deshacer/vite.config.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

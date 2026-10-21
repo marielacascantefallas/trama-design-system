@@ -2,6 +2,7 @@ import { useState, type KeyboardEvent } from 'react';
 import type { Hex } from './color';
 import { Create } from './Create';
 import { Review } from './Review';
+import { LabNav } from '../../shared/LabNav';
 
 type Tab = 'crear' | 'revisar';
 const TABS: { id: Tab; label: string }[] = [
@@ -33,7 +34,7 @@ export function App() {
       </a>
       <header className="bar">
         <strong>Trama</strong>
-        <a href="../../">Laboratorio</a>
+        <LabNav current="temas" />
         <div className="tabs" role="tablist" aria-label="Generador de temas" onKeyDown={onKey}>
           {TABS.map((t) => (
             <button

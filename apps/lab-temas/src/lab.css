@@ -27,7 +27,11 @@ main:focus { outline: none; }
 /* Barra superior */
 .bar { display: flex; align-items: center; gap: 24px; padding: 14px 40px; border-bottom: 2px solid var(--ink); }
 .bar strong { font-size: 18px; }
-.bar a { color: var(--ink-soft); }
+.labnav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.labnav ul { display: flex; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.labnav a { color: var(--ink-soft); text-underline-offset: 4px; }
+.labnav__home { padding-right: 16px; border-right: 1px solid var(--rule); }
+.labnav a[aria-current='page'] { color: var(--ink); font-weight: 700; text-decoration-thickness: 2px; }
 .tabs { display: flex; gap: 4px; margin-left: auto; }
 .tab { min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: none; cursor: pointer; }
 .tab[aria-selected='true'] { background: var(--ink); color: #fff; font-weight: 700; }
@@ -73,9 +77,9 @@ h2 { font-size: 20px; line-height: 1.25; margin-bottom: 12px; }
 
 /* La carta: parejas de mayor a menor contraste, cada vez más chicas */
 .chart { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
-.chart-head { display: grid; grid-template-columns: 1fr 88px 88px; font-size: 14px; color: var(--ink-soft); padding: 6px 0; }
+.chart-head { display: grid; grid-template-columns: minmax(0, 1fr) 88px 88px; font-size: 14px; color: var(--ink-soft); padding: 6px 0; }
 .chart-head span:not(:first-child), .line .r { text-align: right; }
-.line { display: grid; grid-template-columns: 1fr 88px 88px; align-items: center; border-bottom: 1px solid var(--rule); min-height: 60px; }
+.line { display: grid; grid-template-columns: minmax(0, 1fr) 88px 88px; align-items: center; border-bottom: 1px solid var(--rule); min-height: 60px; }
 .line .sample { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 10px 0; }
 .line .fix { font-size: 14px; color: var(--ink-soft); }
 .r { font-variant-numeric: tabular-nums; font-size: 17px; }
@@ -132,7 +136,7 @@ h2 { font-size: 20px; line-height: 1.25; margin-bottom: 12px; }
 .sev.sugerencia { color: var(--ink-soft); }
 .ba { grid-column: 1; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 6px; }
 .pair-s { display: inline-flex; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
-.specimen { display: block; flex: none; font-family: 'Atkinson Hyperlegible', sans-serif; }
+.specimen { display: block; flex: none; max-width: 100%; height: auto; font-family: 'Atkinson Hyperlegible', sans-serif; }
 .pair-name { font-size: 15px; overflow-wrap: anywhere; min-width: 0; }
 .ba span.s { display: inline-flex; gap: 8px; align-items: center; padding: 4px 12px; border-radius: 6px; font-weight: 700; }
 .ba small { font-weight: 400; font-variant-numeric: tabular-nums; }
@@ -141,7 +145,7 @@ h2 { font-size: 20px; line-height: 1.25; margin-bottom: 12px; }
 .rec.is-done h3::after { content: ' (aplicado)'; color: var(--pass); font-weight: 400; }
 
 @media (max-width: 980px) {
-  .canvas { grid-template-columns: 1fr; gap: 40px; padding: 24px 16px; }
+  .canvas { grid-template-columns: minmax(0, 1fr); gap: 40px; padding: 24px 16px; }
   .bar, .tool { padding-left: 16px; padding-right: 16px; }
   .bar { flex-wrap: wrap; gap: 8px 16px; }
   .tabs { margin-left: 0; width: 100%; }
@@ -150,7 +154,8 @@ h2 { font-size: 20px; line-height: 1.25; margin-bottom: 12px; }
 }
 @media (max-width: 560px) {
   h1 { font-size: 28px; }
-  .chart-head, .line { grid-template-columns: 1fr 64px 64px; }
+  .chart-head, .line { grid-template-columns: minmax(0, 1fr) 64px 64px; }
+  .line .sample { min-width: 0; }
   .ramp li { font-size: 11px; }
   .ramp-hex { display: none; }
   .rec { grid-template-columns: 1fr; }

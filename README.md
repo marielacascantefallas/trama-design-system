@@ -69,6 +69,19 @@ npm run build-lab   # se publica en storybook-static/lab/temas
 
 En línea: https://marielacascantefallas.github.io/trama-design-system/lab/temas/
 
+## Laboratorio: Deshacer o confirmar
+
+`apps/lab-deshacer` compara la misma acción de Hilo (marcar una conversación como resuelta) con un diálogo de confirmación y con un aviso de 5 segundos para deshacer, también con Ctrl + Z. Cuenta los clics, el tiempo y los errores corregidos de quien lo usa, sin guardarlos. Cierra con el caso contrario: cancelar una reserva de Ruta con depósito, donde sí va un diálogo que nombra la consecuencia.
+
+Accesibilidad: el diálogo atrapa el foco y lo devuelve; al quitar una fila, el foco pasa a la siguiente; el aviso se anuncia con `role="status"` sin robar el foco; con movimiento reducido no hay animaciones.
+
+```bash
+npm run dev-lab-deshacer
+npm run build-lab   # construye los dos experimentos en storybook-static/lab
+```
+
+En línea: https://marielacascantefallas.github.io/trama-design-system/lab/deshacer/
+
 ## Tokens en capas
 
 | Capa | Archivo | Selector |
