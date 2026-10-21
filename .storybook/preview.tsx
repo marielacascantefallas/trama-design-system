@@ -10,8 +10,8 @@ const preview: Preview = {
         title: 'Marca',
         icon: 'paintbrush',
         items: [
-          { value: 'hilo', title: 'Hilo · inbox' },
-          { value: 'ruta', title: 'Ruta · reservas' },
+          { value: 'hilo', title: 'Hilo, inbox' },
+          { value: 'ruta', title: 'Ruta, reservas' },
         ],
         dynamicTitle: true,
       },
