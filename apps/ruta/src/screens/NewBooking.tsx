@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AICard, Button, TextField } from '@trama';
-import { Check, X } from 'lucide-react';
+import { Check, X } from '../../../shared/icons';
 import { AI_DRAFT, PRICE, colones, pax } from '../data';
 import { useStore } from '../store';
 import { useDialog } from './useDialog';
@@ -34,7 +34,7 @@ export function NewBooking() {
       booking: {
         id: 'R-2052',
         name: name.trim(),
-        ref: 'R-2052 · WhatsApp',
+        ref: 'R-2052, WhatsApp',
         adults,
         kids,
         hotel: hotel || 'En el muelle',
@@ -56,7 +56,7 @@ export function NewBooking() {
               Nueva reserva
             </h2>
             <p className="hilo-caption">
-              {fromAI ? `Desde WhatsApp · ${AI_DRAFT.phone} · hace 4 min` : 'Reserva manual'}
+              {fromAI ? `Desde WhatsApp, ${AI_DRAFT.phone}, hace 4 min` : 'Reserva manual'}
             </p>
           </div>
           <button type="button" className="hilo-icon-btn" aria-label="Cerrar" onClick={close}>
@@ -106,7 +106,7 @@ export function NewBooking() {
                     {x.time} {depId === x.id && <Check size={14} aria-hidden />}
                   </span>
                   <span className="hilo-caption">
-                    {x.boat} · quedan {left}
+                    {x.boat}, quedan {left}
                   </span>
                 </label>
               );
@@ -145,7 +145,7 @@ export function NewBooking() {
               label="Recogida"
               value={hotel}
               onChange={(e) => setHotel(e.target.value)}
-              hint={hint(`${AI} · pasan a las 6:35`)}
+              hint={hint(`${AI}, pasan a las 6:35`)}
             />
           </div>
           <div className="ruta-grid2">

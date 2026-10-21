@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Avatar, TramaTheme } from '@trama';
-import { BarChart3, Bell, Inbox as InboxIcon, SlidersHorizontal, Users } from 'lucide-react';
+import { BarChart3, Bell, Inbox as InboxIcon, SlidersHorizontal, Users } from '../../shared/icons';
 import { go, useStore, type Route } from './store';
 import { Inbox } from './screens/Inbox';
 import { ClientView } from './screens/ClientView';
@@ -44,7 +44,7 @@ export function App() {
   const first = useRef(true);
 
   useEffect(() => {
-    document.title = `${TITLES[s.route]} · Hilo`;
+    document.title = `${TITLES[s.route]}, Hilo`;
     if (first.current) {
       first.current = false;
       return;

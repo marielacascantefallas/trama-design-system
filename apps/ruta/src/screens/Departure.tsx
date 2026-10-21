@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, MetricCard, StatusChip } from '@trama';
-import { ArrowLeft, Check, Ship, Users } from 'lucide-react';
+import { ArrowLeft, Check, Ship, Users } from '../../../shared/icons';
 import { pax, type Booking } from '../data';
 import { dep, useStore } from '../store';
 import { CardHead } from './ui';
@@ -28,7 +28,7 @@ export function Departure() {
   const [checks, setChecks] = useState([true, true, true, false, false]);
   const depositsOk = pend.length === 0;
   const items = [
-    ['Chalecos revisados', '16 adultos · 4 infantiles'],
+    ['Chalecos revisados', '16 adultos, 4 infantiles'],
     ['Combustible y motor', 'Revisado por Kevin a las 8:10'],
     ['Clima', 'Oleaje 1,2 m hasta las 13:00'],
     ['Depósitos confirmados', depositsOk ? 'Todos confirmados' : `Faltan ${pend.map((b) => b.name).join(' y ')}`],
@@ -45,7 +45,7 @@ export function Departure() {
         </a>
         <span aria-hidden>/</span>
         <span aria-current="page">
-          {x.time} · {x.tour}
+          {x.time}, {x.tour}
         </span>
       </nav>
 
@@ -58,13 +58,13 @@ export function Departure() {
               {x.state === 'sea' ? 'En el mar' : `Check-in abre ${x.checkin}`}
             </StatusChip>
           </div>
-          <p className="hilo-muted">Martes 20 de octubre · {x.time} a 13:00 · Muelle de Uvita</p>
+          <p className="hilo-muted">Martes 20 de octubre, {x.time} a 13:00, Muelle de Uvita</p>
           <p className="hilo-row hilo-row--wrap ruta-crew">
             <span className="ruta-inline">
-              <Ship size={16} aria-hidden /> {x.boat} · {x.cap} lugares
+              <Ship size={16} aria-hidden /> {x.boat}, {x.cap} lugares
             </span>
             <span className="ruta-inline">
-              <Users size={16} aria-hidden /> {x.captain} · Guía Sofía Méndez (inglés y alemán)
+              <Users size={16} aria-hidden /> {x.captain}, Guía Sofía Méndez (inglés y alemán)
             </span>
           </p>
         </div>
@@ -94,13 +94,13 @@ export function Departure() {
         <MetricCard
           label="Idiomas"
           value={String(langs.length)}
-          note={langs.map(([l, n]) => `${n} ${l.toLowerCase()}`).join(' · ')}
+          note={langs.map(([l, n]) => `${n} ${l.toLowerCase()}`).join(', ')}
         />
       </div>
 
       <div className="hilo-split">
         <section className="hilo-card" aria-labelledby="manifiesto">
-          <CardHead id="manifiesto" title="Manifiesto" side={`${x.bookings.length} reservas · ${p} pasajeros`} />
+          <CardHead id="manifiesto" title="Manifiesto" side={`${x.bookings.length} reservas, ${p} pasajeros`} />
           <div className="hilo-table-wrap" role="region" aria-label="Manifiesto" tabIndex={0}>
             <table className="hilo-table">
               <thead>
@@ -143,7 +143,7 @@ export function Departure() {
           </div>
           <div className="hilo-card__foot">
             <span className="hilo-caption">
-              Quedan {x.cap - p} lugares{kids ? ` · ${kids} niños a bordo: llevar chalecos talla infantil` : ''}
+              Quedan {x.cap - p} lugares{kids ? `, ${kids} niños a bordo: llevar chalecos talla infantil` : ''}
             </span>
             <Button variant="ghost" size="s" onClick={() => d({ type: 'panel', open: true })}>
               Agregar pasajero
@@ -175,7 +175,7 @@ export function Departure() {
                     />
                     <span>
                       <span className={done[i] ? 'is-done-soft' : ''}>{t}</span>
-                      <span className="hilo-caption">{i === 3 ? dd + ' · se marca solo desde Pagos' : dd}</span>
+                      <span className="hilo-caption">{i === 3 ? dd + ', se marca solo desde Pagos' : dd}</span>
                     </span>
                   </label>
                 </li>
@@ -183,7 +183,7 @@ export function Departure() {
             </ul>
           </section>
           <section className="hilo-card hilo-grow" aria-labelledby="recogida">
-            <CardHead id="recogida" small title="Ruta de recogida" side="Buseta · Luis Ureña" />
+            <CardHead id="recogida" small title="Ruta de recogida" side="Buseta, Luis Ureña" />
             <ol className="ruta-stops">
               {stops.map((b) => (
                 <li key={b.id}>
@@ -192,7 +192,7 @@ export function Departure() {
                   <span>
                     {b.hotel}
                     <span className="hilo-caption">
-                      {b.adults + b.kids} pasajeros · {b.name}
+                      {b.adults + b.kids} pasajeros, {b.name}
                     </span>
                   </span>
                   {b.arrived && <Check size={16} aria-label="Ya en el muelle" className="is-ok" />}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, Tabs } from '@trama';
-import { Search } from 'lucide-react';
+import { Search } from '../../../shared/icons';
 import { DAY_LABEL } from '../data';
 import { useStore } from '../store';
 import { payChip } from './Departure';
@@ -79,7 +79,7 @@ export function Bookings() {
                     </span>
                   </th>
                   <td>
-                    {x.state === 'moved' ? 'Movida' : `${DAY_LABEL[x.day]} · ${x.time}`}
+                    {x.state === 'moved' ? 'Movida' : `${DAY_LABEL[x.day]}, ${x.time}`}
                     <span className="hilo-caption">{x.tour}</span>
                   </td>
                   <td>{b.adults + b.kids}</td>

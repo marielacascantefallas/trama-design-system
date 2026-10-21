@@ -1,5 +1,5 @@
 import { Button, MetricCard } from '@trama';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from '../../../shared/icons';
 import { CAL_ROWS, WEEK, pax, type CalCell } from '../data';
 import { useStore, type State } from '../store';
 import { Bar } from './ui';
@@ -29,7 +29,7 @@ export function Calendar() {
       <header className="hilo-row hilo-row--between hilo-page__head">
         <div>
           <h1 className="hilo-h1 hilo-h1--lg">Calendario</h1>
-          <p className="hilo-muted">Ocupación por salida · semana del 19 al 25 de octubre</p>
+          <p className="hilo-muted">Ocupación por salida, semana del 19 al 25 de octubre</p>
         </div>
         <div className="hilo-row">
           <button type="button" className="hilo-icon-btn hilo-icon-btn--outline" aria-label="Semana anterior">
@@ -74,7 +74,7 @@ export function Calendar() {
                 {WEEK.map((w, i) => (
                   <th key={w} scope="col" className={i === 1 ? 'is-today' : ''}>
                     {w}
-                    {i === 1 && ' · hoy'}
+                    {i === 1 && ', hoy'}
                   </th>
                 ))}
               </tr>
@@ -84,10 +84,10 @@ export function Calendar() {
                 <tr key={r.time + r.tour}>
                   <th scope="row">
                     <span className="hilo-strong">
-                      {r.time} · {r.tour}
+                      {r.time}, {r.tour}
                     </span>
                     <span className="hilo-caption">
-                      {r.boat} · {r.cap} lugares
+                      {r.boat}, {r.cap} lugares
                     </span>
                   </th>
                   {r.vals.map((v, i) => {

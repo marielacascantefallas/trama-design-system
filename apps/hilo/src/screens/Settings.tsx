@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, StatusChip, Switch, TextField } from '@trama';
-import { Phone } from 'lucide-react';
+import { Phone } from '../../../shared/icons';
 import { URGENT_RULES } from '../data';
 import { useStore } from '../store';
 
@@ -53,7 +53,7 @@ export function Settings() {
     <div className="hilo-page">
       <header className="hilo-page__head">
         <h1 className="hilo-h1 hilo-h1--lg">Ajustes</h1>
-        <p className="hilo-muted">Cuentas Claras · solo la dueña y quien tenga rol de dueño pueden cambiar esto</p>
+        <p className="hilo-muted">Cuentas Claras, solo la dueña y quien tenga rol de dueño pueden cambiar esto</p>
       </header>
 
       <div className="hilo-settings">
@@ -76,7 +76,7 @@ export function Settings() {
           </ul>
           <div className="hilo-card hilo-plan">
             <p className="hilo-strong">Plan Equipo</p>
-            <p className="hilo-caption">{people.length + invited.length} de 8 personas · renueva el 1 de noviembre</p>
+            <p className="hilo-caption">{people.length + invited.length} de 8 personas, renueva el 1 de noviembre</p>
             <span className="hilo-bar" aria-hidden>
               <span style={{ width: `${((people.length + invited.length) / 8) * 100}%` }} />
             </span>
@@ -97,7 +97,7 @@ export function Settings() {
               </span>
               <span className="hilo-grow-x">
                 <span className="hilo-strong">+506 2222 4180</span>
-                <span className="hilo-caption">WhatsApp Business · verificado el 3 de marzo</span>
+                <span className="hilo-caption">WhatsApp Business, verificado el 3 de marzo</span>
               </span>
               <StatusChip tone="success">Conectado</StatusChip>
             </div>
@@ -112,7 +112,7 @@ export function Settings() {
               </div>
               <div>
                 <dt>Horario de atención</dt>
-                <dd>Lun a vie · 8:00 a 17:00</dd>
+                <dd>Lunes a viernes, de 8:00 a 17:00</dd>
               </div>
             </dl>
             <div className="hilo-row hilo-card__pad">
@@ -152,7 +152,7 @@ export function Settings() {
                 Equipo y roles
               </h2>
               <p className="hilo-caption">
-                {people.length} personas · los agentes solo ven sus chats y los sin asignar.
+                {people.length} personas, los agentes solo ven sus chats y los sin asignar.
               </p>
             </div>
             <ul className="hilo-people hilo-people--rows">
@@ -241,7 +241,7 @@ export function Settings() {
               />
             </div>
             <div className="hilo-card__foot">
-              <span className="hilo-caption">Últimos 30 días: 64 marcadas · 3 quitadas a mano</span>
+              <span className="hilo-caption">Últimos 30 días: 64 marcadas, 3 quitadas a mano</span>
               <Button variant="ghost" size="s">
                 Agregar regla
               </Button>

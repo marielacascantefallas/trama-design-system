@@ -18,7 +18,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Pestañas con el patrón WAI-ARIA: **Tab** entra a la pestaña activa, **← →** se mueven, **Inicio/Fin** van a los extremos. La activa se marca con barra inferior y peso, no solo con color. Usa `TabPanel` con el mismo `idPrefix` para enlazar cada panel.',
+          'Pestañas con el patrón WAI-ARIA: **Tab** entra a la pestaña activa, las **flechas izquierda y derecha** se mueven, **Inicio/Fin** van a los extremos. La activa se marca con barra inferior y peso, no solo con color. Usa `TabPanel` con el mismo `idPrefix` para enlazar cada panel.',
       },
     },
   },

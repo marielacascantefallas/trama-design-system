@@ -2,10 +2,10 @@ import type { ReactNode } from 'react';
 import { TramaTheme, type Brand, type Mode } from '../components/TramaTheme/TramaTheme';
 
 const THEMES: { brand: Brand; mode: Mode; label: string }[] = [
-  { brand: 'hilo', mode: 'light', label: 'Hilo · claro' },
-  { brand: 'hilo', mode: 'dark', label: 'Hilo · oscuro' },
-  { brand: 'ruta', mode: 'light', label: 'Ruta · claro' },
-  { brand: 'ruta', mode: 'dark', label: 'Ruta · oscuro' },
+  { brand: 'hilo', mode: 'light', label: 'Hilo claro' },
+  { brand: 'hilo', mode: 'dark', label: 'Hilo oscuro' },
+  { brand: 'ruta', mode: 'light', label: 'Ruta claro' },
+  { brand: 'ruta', mode: 'dark', label: 'Ruta oscuro' },
 ];
 
 /** Muestra el mismo contenido en los 4 temas, lado a lado. */

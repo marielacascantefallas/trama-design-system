@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Avatar, TramaTheme } from '@trama';
-import { Bell, CalendarDays, Home, List, Wallet } from 'lucide-react';
+import { Bell, CalendarDays, Home, List, Wallet } from '../../shared/icons';
 import { useStore, type Route } from './store';
 import { Today } from './screens/Today';
 import { Departure } from './screens/Departure';
@@ -65,7 +65,7 @@ export function App() {
   const route = mobile && s.route === 'hoy' ? 'checkin' : s.route;
 
   useEffect(() => {
-    document.title = `${TITLES[route]} · Ruta`;
+    document.title = `${TITLES[route]}, Ruta`;
     if (first.current) {
       first.current = false;
       return;

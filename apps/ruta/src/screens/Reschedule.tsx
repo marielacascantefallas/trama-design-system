@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, StatusChip, Switch } from '@trama';
-import { Waves, X } from 'lucide-react';
+import { Waves, X } from '../../../shared/icons';
 import { DAY_LABEL, pax } from '../data';
 import { dep, useStore } from '../store';
 import { useDialog } from './useDialog';
@@ -15,7 +15,7 @@ export function Reschedule() {
   const [to, setTo] = useState('man-1300');
   const [translate, setTranslate] = useState(true);
   const target = dep(s, to);
-  const label = `${DAY_LABEL[target.day].toLowerCase()} · ${target.time}`;
+  const label = `${DAY_LABEL[target.day].toLowerCase()}, ${target.time}`;
   const whatsapp = from.bookings.filter((b) => !b.ref.startsWith('Viator'));
   const english = from.bookings
     .filter((b) => b.lang === 'Inglés' && !b.ref.startsWith('Viator'))
@@ -32,7 +32,7 @@ export function Reschedule() {
               Reprogramar la salida de {from.time}
             </h2>
             <p className="hilo-muted">
-              {from.tour} · {from.boat} · {n} pasajeros en {from.bookings.length} reservas
+              {from.tour}, {from.boat}, {n} pasajeros en {from.bookings.length} reservas
             </p>
             <div className="ruta-alert">
               <Waves size={18} aria-hidden />
@@ -64,10 +64,10 @@ export function Reschedule() {
                   />
                   <span className="hilo-grow-x">
                     <span className="hilo-strong">
-                      {DAY_LABEL[o.day]} · {o.time}
+                      {DAY_LABEL[o.day]}, {o.time}
                     </span>
                     <span className="hilo-caption">
-                      {o.boat} · quedan {left} lugares
+                      {o.boat}, quedan {left} lugares
                     </span>
                   </span>
                   <StatusChip tone={ok ? 'success' : 'warning'}>
@@ -90,10 +90,10 @@ export function Reschedule() {
                   <span>
                     <span className="hilo-strong">{b.name}</span>
                     <span className="hilo-caption">
-                      {b.adults + b.kids} ·{' '}
+                      {b.adults + b.kids} {b.adults + b.kids === 1 ? 'persona' : 'personas'},{' '}
                       {b.ref.startsWith('Viator')
                         ? 'Viator avisa al cliente'
-                        : `${b.ref.split(' · ')[1] ?? 'GetYourGuide'} · ${b.lang.toLowerCase()}`}
+                        : `${b.ref.split(', ')[1] ?? 'GetYourGuide'}, ${b.lang.toLowerCase()}`}
                     </span>
                   </span>
                 </li>

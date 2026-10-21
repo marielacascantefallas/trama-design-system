@@ -6,14 +6,14 @@ import { Meta } from '@storybook/blocks';
 
 Trama es un design system multimarca. Una sola base de tokens y componentes sirve a dos productos:
 
-- **Hilo** — inbox compartido de WhatsApp para equipos pequeños de servicio. Color añil, esquinas más redondeadas.
-- **Ruta** — panel de reservas para operadores de tours en Costa Rica. Color atardecer, esquinas más rectas.
+- **Hilo:** inbox compartido de WhatsApp para equipos pequeños de servicio. Color añil, esquinas más redondeadas.
+- **Ruta:** panel de reservas para operadores de tours en Costa Rica. Color atardecer, esquinas más rectas.
 
 Usa los selectores **Marca** y **Modo** de la barra superior para ver cualquier componente en los cuatro temas.
 
 ## Cómo está construido
 
-1. **Tokens en tres capas:** primitivos (valores crudos) → marca (Hilo o Ruta) → semánticos (claro u oscuro). Los componentes solo usan tokens semánticos.
+1. **Tokens en tres capas:** primitivos (valores crudos), luego marca (Hilo o Ruta) y al final semánticos (claro u oscuro). Los componentes solo usan tokens semánticos.
 2. **Una sola fuente de verdad:** `tokens/trama-tokens.json` alimenta las variables de Figma y, con Style Dictionary, las variables CSS de este código.
 3. **Mismos nombres en diseño y código:** `color/action/primary` en Figma es `var(--color-action-primary)` aquí.
 

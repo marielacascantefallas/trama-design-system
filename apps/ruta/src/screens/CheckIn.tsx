@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, StatusChip } from '@trama';
-import { ArrowLeft, Check, Search } from 'lucide-react';
+import { ArrowLeft, Check, Search } from '../../../shared/icons';
 import { colones, pax } from '../data';
 import { dep, useStore } from '../store';
 import { Bar } from './ui';
@@ -42,9 +42,9 @@ export function CheckIn() {
             <ArrowLeft size={22} aria-hidden />
           </button>
           <div>
-            <h1 className="hilo-h2">Check-in · {x.time}</h1>
+            <h1 className="hilo-h2">Check-in de las {x.time}</h1>
             <p className="hilo-caption">
-              {x.tour} · {x.boat}
+              {x.tour}, {x.boat}
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function CheckIn() {
                 <span className="hilo-strong">{b.name}</span>
                 <span className="hilo-caption">
                   {b.adults + b.kids} {b.adults + b.kids === 1 ? 'persona' : 'personas'}
-                  {b.kids ? ` · ${b.kids} ${b.kids === 1 ? 'niño' : 'niños'}` : ` · ${b.lang.toLowerCase()}`}
+                  {b.kids ? `, ${b.kids} ${b.kids === 1 ? 'niño' : 'niños'}` : `, ${b.lang.toLowerCase()}`}
                 </span>
                 <span className="hilo-caption">
                   {b.hotel === 'En el muelle' ? 'Llega directo al muelle' : `Recoge: ${b.hotel}`}

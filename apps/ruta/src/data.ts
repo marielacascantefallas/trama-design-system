@@ -85,7 +85,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2041',
         name: 'Familia Rojas',
-        ref: 'R-2041 · WhatsApp',
+        ref: 'R-2041, WhatsApp',
         adults: 2,
         kids: 2,
         hotel: 'Hotel Cristal Ballena',
@@ -97,7 +97,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2044',
         name: 'Tom y Lisa Meyer',
-        ref: 'R-2044 · Web',
+        ref: 'R-2044, Web',
         adults: 2,
         hotel: 'Oxygen Jungle Villas',
         pickup: '8:05',
@@ -132,7 +132,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2038',
         name: 'Ana Lucía Chaves',
-        ref: 'R-2038 · WhatsApp',
+        ref: 'R-2038, WhatsApp',
         adults: 1,
         hotel: 'En el muelle',
         lang: 'Español',
@@ -142,7 +142,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2046',
         name: 'Carlos Mena',
-        ref: 'R-2046 · Llamada',
+        ref: 'R-2046, Llamada',
         adults: 2,
         hotel: 'En el muelle',
         lang: 'Español',
@@ -167,7 +167,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2048',
         name: 'Familia Herrera',
-        ref: 'R-2048 · WhatsApp',
+        ref: 'R-2048, WhatsApp',
         adults: 2,
         kids: 2,
         hotel: 'Hotel Cristal Ballena',
@@ -177,7 +177,7 @@ export const DEPARTURES: Departure[] = [
       b({
         id: 'R-2050',
         name: 'Sarah Collins',
-        ref: 'R-2050 · Web',
+        ref: 'R-2050, Web',
         adults: 2,
         hotel: 'Oxygen Jungle Villas',
         lang: 'Inglés',
@@ -324,30 +324,30 @@ export const BANK: BankMove[] = [
     from: 'MARIA CHAVES V.',
     amount: 20000,
     booking: 'R-2038',
-    note: 'Ana Lucía Chaves · R-2038',
+    note: 'Ana Lucía Chaves, R-2038',
   },
-  { id: 'm3', time: '8:58', from: 'CARLOS MENA', amount: 24000, booking: 'R-2046', note: 'Carlos Mena · R-2046' },
+  { id: 'm3', time: '8:58', from: 'CARLOS MENA', amount: 24000, booking: 'R-2046', note: 'Carlos Mena, R-2046' },
   {
     id: 'm4',
     time: '7:40',
     from: 'RAQUEL ROJAS MORA',
     amount: 28000,
     booking: 'R-2041',
-    note: 'Familia Rojas · por confirmar',
+    note: 'Familia Rojas, por confirmar',
   },
-  { id: 'm5', time: '7:12', from: 'DIEGO ALFARO', amount: 54000, booking: 'R-2029', note: 'R-2029 · mañana 7:00' },
-  { id: 'm6', time: '6:47', from: 'KARLA SEGURA', amount: 18000, booking: 'R-2031', note: 'R-2031 · jueves 9:30' },
-  { id: 'm7', time: '6:31', from: 'PABLO ARAYA', amount: 15000, booking: 'R-2027', note: 'R-2027 · viernes 7:30' },
-  { id: 'm8', time: '6:05', from: 'LAURA JIMENEZ', amount: 18000, booking: 'R-2025', note: 'R-2025 · jueves 9:30' },
+  { id: 'm5', time: '7:12', from: 'DIEGO ALFARO', amount: 54000, booking: 'R-2029', note: 'R-2029, mañana 7:00' },
+  { id: 'm6', time: '6:47', from: 'KARLA SEGURA', amount: 18000, booking: 'R-2031', note: 'R-2031, jueves 9:30' },
+  { id: 'm7', time: '6:31', from: 'PABLO ARAYA', amount: 15000, booking: 'R-2027', note: 'R-2027, viernes 7:30' },
+  { id: 'm8', time: '6:05', from: 'LAURA JIMENEZ', amount: 18000, booking: 'R-2025', note: 'R-2025, jueves 9:30' },
 ];
 
 export const PROOFS: Record<string, { proof: string; bank: string | null }> = {
   'R-2041': {
-    proof: 'Foto por WhatsApp a las 7:42 · SINPE desde 8841 2290',
-    bank: '₡28 000 a las 7:40 · RAQUEL ROJAS MORA',
+    proof: 'Foto por WhatsApp a las 7:42, SINPE desde 8841 2290',
+    bank: '₡28 000 a las 7:40, RAQUEL ROJAS MORA',
   },
-  'R-2044': { proof: 'Correo a las 8:15 · “SINPE sent from my BN app”', bank: null },
-  'R-2052': { proof: 'Pagó por SINPE antes de crear la reserva', bank: '₡45 000 a las 10:12 · JOSE BRENES SOLANO' },
+  'R-2044': { proof: 'Correo a las 8:15, “SINPE sent from my BN app”', bank: null },
+  'R-2052': { proof: 'Pagó por SINPE antes de crear la reserva', bank: '₡45 000 a las 10:12, JOSE BRENES SOLANO' },
 };
 
 export const AI_DRAFT = {

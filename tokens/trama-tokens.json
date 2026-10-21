@@ -311,7 +311,7 @@
     "fontFamily": {
       "sans": {
         "$type": "fontFamily",
-        "$value": "Inter"
+        "$value": "Instrument Sans"
       }
     },
     "fontSize": {

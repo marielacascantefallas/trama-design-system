@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AICard, Avatar, Button, StatusChip } from '@trama';
-import { X } from 'lucide-react';
+import { X } from '../../../shared/icons';
 import { LOAD_LIMIT } from '../data';
 import { useStore } from '../store';
 
@@ -106,7 +106,7 @@ export function AssignModal() {
                     <span className="hilo-row">
                       {near && <StatusChip tone="warning">Cerca del límite</StatusChip>}
                       <span className="hilo-caption hilo-ink">
-                        {to === p.id && after !== p.load ? `${p.load} → ${after} chats` : `${p.load} chats`}
+                        {to === p.id && after !== p.load ? `De ${p.load} a ${after} chats` : `${p.load} chats`}
                       </span>
                     </span>
                     <span className="hilo-bar" aria-hidden>

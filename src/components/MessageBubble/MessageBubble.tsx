@@ -26,7 +26,7 @@ export function MessageBubble({ side = 'incoming', time, author, className, chil
       <div className="trama-bubble__text">{children}</div>
       <span className="trama-bubble__meta">
         {time}
-        {author && ` · ${author}`}
+        {author && `, ${author}`}
       </span>
     </div>
   );

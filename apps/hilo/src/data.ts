@@ -336,7 +336,7 @@ export const HISTORY: HistoryEvent[] = [
     type: 'mensajes',
     title: 'Conversación sobre la D-104 de septiembre',
     detail: 'Andrés pidió confirmar la presentación; Ana respondió y envió el comprobante.',
-    meta: 'Hoy · Ana Vargas',
+    meta: 'Hoy, Ana Vargas',
     chip: { tone: 'danger', label: 'Urgente' },
   },
   {
@@ -344,14 +344,14 @@ export const HISTORY: HistoryEvent[] = [
     type: 'documentos',
     title: 'Reporte de ventas con tarjeta',
     detail: 'Recibido por WhatsApp y guardado en Documentos.',
-    meta: 'Ayer · Andrés Solano',
+    meta: 'Ayer, Andrés Solano',
   },
   {
     month: 'Octubre 2026',
     type: 'tramites',
     title: 'Pago de octubre registrado',
     detail: 'Transferencia BAC por ₡185 000.',
-    meta: '12 oct · Daniela Rojas',
+    meta: '12 oct, Daniela Rojas',
     chip: { tone: 'success', label: 'Pagado' },
   },
   {
@@ -359,14 +359,14 @@ export const HISTORY: HistoryEvent[] = [
     type: 'tramites',
     title: 'Cliente asignado a Ana Vargas',
     detail: 'Reasignado desde Luis Jiménez por cambio de cartera.',
-    meta: '2 oct · Daniela Rojas',
+    meta: '2 oct, Daniela Rojas',
   },
   {
     month: 'Septiembre 2026',
     type: 'tramites',
     title: 'D-104 de agosto presentada',
     detail: 'Comprobante enviado al cliente el mismo día.',
-    meta: '15 sep · Luis Jiménez',
+    meta: '15 sep, Luis Jiménez',
     chip: { tone: 'success', label: 'A tiempo' },
   },
   {
@@ -374,7 +374,7 @@ export const HISTORY: HistoryEvent[] = [
     type: 'tramites',
     title: 'Planilla CCSS de agosto',
     detail: 'Presentada con 2 días de anticipación.',
-    meta: '8 sep · Luis Jiménez',
+    meta: '8 sep, Luis Jiménez',
     chip: { tone: 'success', label: 'A tiempo' },
   },
   {
@@ -382,14 +382,14 @@ export const HISTORY: HistoryEvent[] = [
     type: 'mensajes',
     title: 'Consulta sobre factura electrónica',
     detail: 'Pidió cómo anular una factura duplicada.',
-    meta: '3 sep · Luis Jiménez',
+    meta: '3 sep, Luis Jiménez',
   },
   {
     month: 'Septiembre 2026',
     type: 'documentos',
     title: 'Facturas de compras de agosto',
     detail: '23 documentos recibidos en un .zip.',
-    meta: '2 sep · Andrés Solano',
+    meta: '2 sep, Andrés Solano',
   },
 ];
 

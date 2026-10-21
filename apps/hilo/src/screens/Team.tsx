@@ -1,5 +1,5 @@
 import { AICard, Avatar, Button, MetricCard, StatusChip } from '@trama';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle } from '../../../shared/icons';
 import { LOAD_LIMIT } from '../data';
 import { go, useStore } from '../store';
 
@@ -49,7 +49,7 @@ export function Team() {
       <header className="hilo-row hilo-row--between hilo-page__head">
         <div>
           <h1 className="hilo-h1 hilo-h1--lg">Equipo</h1>
-          <p className="hilo-muted">Hoy, martes 20 de octubre · 6 personas en turno · actualizado 9:41</p>
+          <p className="hilo-muted">Hoy, martes 20 de octubre, 6 personas en turno, actualizado 9:41</p>
         </div>
         <div className="hilo-row">
           <Button variant="secondary">Exportar semana</Button>
@@ -148,7 +148,7 @@ export function Team() {
                     <span className="hilo-grow-x">
                       <span className="hilo-strong">{b.name}</span>
                       <span className="hilo-caption">
-                        “{b.msg}” · {who}
+                        “{b.msg}”, {who}
                       </span>
                     </span>
                     <StatusChip tone={b.tone}>{b.wait}</StatusChip>
@@ -221,7 +221,7 @@ export function Team() {
               })}
             </ul>
             <div className="hilo-card__foot">
-              <span className="hilo-caption">5 marcadas hoy · {s.unmarked} quitadas a mano</span>
+              <span className="hilo-caption">5 marcadas hoy, {s.unmarked} quitadas a mano</span>
               <a className="hilo-link" href="#/ajustes">
                 Editar reglas
               </a>

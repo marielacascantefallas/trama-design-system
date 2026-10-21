@@ -1,8 +1,8 @@
 import { AICard, Button, MetricCard, StatusChip } from '@trama';
-import { Cloud, MapPin, Ship, UserCheck, Users, Wallet, Waves } from 'lucide-react';
+import { Cloud, Ship, UserCheck } from '../../../shared/icons';
 import { AI_DRAFT, colones, pax, type Departure } from '../data';
 import { go, useStore } from '../store';
-import { Bar, CardHead, IconTile } from './ui';
+import { Bar, CardHead } from './ui';
 
 function status(d: Departure) {
   if (d.state === 'sea') return <StatusChip tone="success">En el mar</StatusChip>;
@@ -34,31 +34,27 @@ export function Today() {
   const todo = [
     ...pending.map((b) => ({
       key: b.id,
-      Icon: Wallet,
       title: 'Depósito SINPE sin confirmar',
-      detail: `${b.name} · ${colones(b.deposit ?? 0)} · ${b.at}`,
+      detail: `${b.name}, ${colones(b.deposit ?? 0)}, ${b.at}`,
       action: () => go('pagos'),
     })),
     {
       key: 'hotel',
-      Icon: MapPin,
       title: 'Falta hotel de recogida',
-      detail: 'Viator V-88231 · 3 personas · mañana 7:00',
+      detail: 'Viator V-88231, 3 personas, mañana 7:00',
     },
     {
       key: 'guia',
-      Icon: Users,
       title: 'Guía en alemán sin confirmar',
-      detail: 'GetYourGuide G-4410 · 2 personas · salida 9:30',
+      detail: 'GetYourGuide G-4410, 2 personas, salida 9:30',
     },
     ...(afternoon.state !== 'moved'
       ? [
           {
             key: 'olas',
-            Icon: Waves,
             warn: true,
             title: 'Oleaje de 1,8 m en la tarde',
-            detail: 'Salida de 13:00 · 11 pasajeros · decidir antes de las 11:00',
+            detail: 'Salida de 13:00, 11 pasajeros, decidir antes de las 11:00',
             action: () => d({ type: 'openReschedule', dep: 'hoy-1300' }),
           },
         ]
@@ -70,13 +66,13 @@ export function Today() {
       <header className="hilo-row hilo-row--between hilo-page__head">
         <div>
           <h1 className="hilo-h1 hilo-h1--lg">Hoy</h1>
-          <p className="hilo-muted">Martes 20 de octubre · Ballena Azul Tours · Uvita, Puntarenas</p>
+          <p className="hilo-muted">Martes 20 de octubre, Ballena Azul Tours, Uvita, Puntarenas</p>
         </div>
         <div className="hilo-row ruta-head-actions">
           <div className="ruta-weather">
             <Cloud size={18} aria-hidden />
             <span>
-              <strong>27 °C · viento 14 km/h</strong>
+              <strong>27 °C, viento 14 km/h</strong>
               <span className="ruta-warn-text">Oleaje 1,2 m, sube a 1,8 m a las 14:00</span>
             </span>
           </div>
@@ -116,7 +112,7 @@ export function Today() {
 
       <div className="hilo-split">
         <section className="hilo-card" aria-labelledby="salidas">
-          <CardHead id="salidas" title="Salidas de hoy" side="Muelle de Uvita · zarpe 15 min después del check-in" />
+          <CardHead id="salidas" title="Salidas de hoy" side="Muelle de Uvita, zarpe 15 min después del check-in" />
           <div className="hilo-table-wrap" role="region" aria-label="Salidas de hoy" tabIndex={0}>
             <table className="hilo-table ruta-deps">
               <thead>
@@ -156,7 +152,7 @@ export function Today() {
                           <span className="hilo-strong">{x.tour}</span>
                         )}
                         <span className="hilo-caption ruta-boat">
-                          <Ship size={14} aria-hidden /> {x.boat} · {x.captain}
+                          <Ship size={14} aria-hidden /> {x.boat}, {x.captain}
                         </span>
                       </td>
                       {x.state === 'moved' ? (
@@ -202,30 +198,27 @@ export function Today() {
             <p className="hilo-label">Embarcaciones</p>
             <ul>
               {[
-                ['Marea I', '24 lugares · 2 salidas hoy', 'success', 'En el mar'],
+                ['Marea I', '24 lugares, 2 salidas hoy', 'success', 'En el mar'],
                 [
                   'Marea II',
-                  '16 lugares · 1 salida hoy',
+                  '16 lugares, 1 salida hoy',
                   today.find((x) => x.id === 'hoy-930')!.state === 'sea' ? 'success' : 'neutral',
                   today.find((x) => x.id === 'hoy-930')!.state === 'sea' ? 'En el mar' : 'En el muelle',
                 ],
-                ['Gaviota', '10 lugares · 2 salidas hoy', 'warning', 'Mantenimiento jueves'],
+                ['Gaviota', '10 lugares, 2 salidas hoy', 'warning', 'Mantenimiento jueves'],
               ].map(([n, dd, tone, lab]) => (
                 <li key={n}>
-                  <Ship size={18} aria-hidden />
-                  <span>
-                    <span className="hilo-strong">{n}</span>
-                    <span className="hilo-caption">{dd}</span>
-                    <StatusChip tone={tone as 'success'}>{lab}</StatusChip>
-                  </span>
+                  <span className="hilo-strong">{n}</span>
+                  <span className="hilo-caption">{dd}</span>
+                  <StatusChip tone={tone as 'success'}>{lab}</StatusChip>
                 </li>
               ))}
             </ul>
           </div>
           <div className="hilo-card__foot">
             <span className="hilo-caption">
-              Mañana: 6 salidas · {s.deps.filter((x) => x.day === 'mañana').reduce((t, x) => t + pax(x), 0) + 37}{' '}
-              pasajeros · 1 reserva sin hotel de recogida
+              Mañana: 6 salidas, {s.deps.filter((x) => x.day === 'mañana').reduce((t, x) => t + pax(x), 0) + 37}{' '}
+              pasajeros, 1 reserva sin hotel de recogida
             </span>
             <a className="hilo-link" href="#/calendario">
               Ver calendario
@@ -249,7 +242,7 @@ export function Today() {
                 </>
               }
             >
-              {AI_DRAFT.name} · 4 personas (2 niños) · Avistamiento de ballenas, mañana 7:00 · recogida en{' '}
+              {AI_DRAFT.name}, 4 personas (2 niños), Avistamiento de ballenas, mañana 7:00, recogida en{' '}
               {AI_DRAFT.hotel}. Hay cupo: quedan {tomorrow700.cap - pax(tomorrow700)} lugares en Marea I.
             </AICard>
           ) : (
@@ -268,9 +261,6 @@ export function Today() {
             <ul className="ruta-todo">
               {todo.map((t) => (
                 <li key={t.key}>
-                  <IconTile warn={'warn' in t && t.warn}>
-                    <t.Icon size={16} aria-hidden />
-                  </IconTile>
                   <span className="hilo-grow-x">
                     {t.action ? (
                       <button type="button" className="hilo-link-strong" onClick={t.action}>

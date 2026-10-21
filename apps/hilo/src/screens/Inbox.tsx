@@ -10,7 +10,7 @@ import {
   Paperclip,
   Search,
   Users,
-} from 'lucide-react';
+} from '../../../shared/icons';
 import { go, useStore } from '../store';
 import type { Chat } from '../data';
 
@@ -55,7 +55,7 @@ export function Inbox() {
             <h1 id="bandeja-titulo" className="hilo-h1">
               {mobile ? 'Bandeja del equipo' : 'Bandeja'}
             </h1>
-            <p className="hilo-caption">Cuentas Claras · +506 2222 4180</p>
+            <p className="hilo-caption">Cuentas Claras, +506 2222 4180</p>
           </div>
           <button type="button" className="hilo-icon-btn hilo-icon-btn--outline" aria-label="Filtros">
             <ListFilter size={18} strokeWidth={1.75} aria-hidden />
@@ -96,7 +96,7 @@ export function Inbox() {
                     {urgentOpen.length === 1 ? '1 urgencia sin atender' : `${urgentOpen.length} urgencias sin atender`}
                   </strong>
                   <span>
-                    {urgentOpen[0].name} · {urgentOpen[0].urgent}
+                    {urgentOpen[0].name}, {urgentOpen[0].urgent}
                   </span>
                 </span>
                 <ChevronRight size={16} aria-hidden />
@@ -148,7 +148,7 @@ export function Inbox() {
                 <ListRow
                   key={c.id}
                   title={c.name}
-                  detail={mobile && c.owner ? `${owner(s.team, c.owner)} · ${c.preview}` : c.preview}
+                  detail={mobile && c.owner ? `${owner(s.team, c.owner)}, ${c.preview}` : c.preview}
                   time={c.time}
                   status={c.status}
                   selected={!mobile && c.id === chat.id}
@@ -207,7 +207,7 @@ function Conversation({ chat, onBack }: { chat: Chat; onBack: () => void }) {
             {chat.name}
           </h2>
           <p className="hilo-caption">
-            {chat.contact} · {chat.phone}
+            {chat.contact}, {chat.phone}
           </p>
         </div>
         <Button variant="secondary" size="s" onClick={() => d({ type: 'openAssign', ids: [chat.id] })}>
@@ -341,9 +341,9 @@ function ClientPanel({ chat }: { chat: Chat }) {
   const [done, setDone] = useState([false, false, true]);
   const ownerName = chat.owner ? s.team.find((p) => p.id === chat.owner)?.name : 'Sin asignar';
   const tasks = [
-    { t: 'Declaración IVA (D-104)', d: 'Septiembre · vence hoy', chip: { tone: 'danger' as const, label: 'Hoy' } },
-    { t: 'Planilla CCSS', d: 'Octubre · vence 31 oct', chip: { tone: 'neutral' as const, label: '12 días' } },
-    { t: 'Facturas de compras', d: 'Recibidas ayer · 23 documentos' },
+    { t: 'Declaración IVA (D-104)', d: 'Septiembre, vence hoy', chip: { tone: 'danger' as const, label: 'Hoy' } },
+    { t: 'Planilla CCSS', d: 'Octubre, vence 31 oct', chip: { tone: 'neutral' as const, label: '12 días' } },
+    { t: 'Facturas de compras', d: 'Recibidas ayer, 23 documentos' },
   ];
   return (
     <aside className="hilo-panel" aria-label={`Datos de ${chat.name}`}>
@@ -382,7 +382,7 @@ function ClientPanel({ chat }: { chat: Chat }) {
           {full && (
             <div>
               <dt>Último pago</dt>
-              <dd>12 oct · ₡185 000</dd>
+              <dd>12 oct, ₡185 000</dd>
             </div>
           )}
         </dl>
@@ -416,13 +416,13 @@ function ClientPanel({ chat }: { chat: Chat }) {
               <li>
                 <FileText size={16} aria-hidden />
                 <span>
-                  Reporte ventas tarjeta - sept.pdf<span className="hilo-caption">Ayer · 5:03 p.m. · 182 KB</span>
+                  Reporte ventas tarjeta - sept.pdf<span className="hilo-caption">Ayer, 5:03 p.m., 182 KB</span>
                 </span>
               </li>
               <li>
                 <FileText size={16} aria-hidden />
                 <span>
-                  Facturas compras sept.zip<span className="hilo-caption">Ayer · 2:40 p.m. · 4,1 MB</span>
+                  Facturas compras sept.zip<span className="hilo-caption">Ayer, 2:40 p.m., 4,1 MB</span>
                 </span>
               </li>
             </ul>
@@ -433,19 +433,19 @@ function ClientPanel({ chat }: { chat: Chat }) {
               <li>
                 <AlertTriangle size={16} aria-hidden />
                 <span>
-                  Hilo lo marcó como urgente<span className="hilo-caption">Hoy · 9:38 a.m.</span>
+                  Hilo lo marcó como urgente<span className="hilo-caption">Hoy, 9:38 a.m.</span>
                 </span>
               </li>
               <li>
                 <FileText size={16} aria-hidden />
                 <span>
-                  Andrés envió el reporte de ventas<span className="hilo-caption">Ayer · 5:03 p.m.</span>
+                  Andrés envió el reporte de ventas<span className="hilo-caption">Ayer, 5:03 p.m.</span>
                 </span>
               </li>
               <li>
                 <Users size={16} aria-hidden />
                 <span>
-                  Daniela asignó el cliente a Ana<span className="hilo-caption">2 oct · 3:58 p.m.</span>
+                  Daniela asignó el cliente a Ana<span className="hilo-caption">2 oct, 3:58 p.m.</span>
                 </span>
               </li>
             </ul>

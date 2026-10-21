@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AICard, Avatar, Button, MetricCard, StatusChip, Tabs } from '@trama';
-import { ArrowLeft, Check, ChevronDown, FileText, MessageSquare, Users } from 'lucide-react';
+import { ArrowLeft, Check, ChevronDown, FileText, MessageSquare, Users } from '../../../shared/icons';
 import { HISTORY, type EventType } from '../data';
 import { go, useStore } from '../store';
 
@@ -31,7 +31,7 @@ export function ClientView() {
             <h1 className="hilo-h1 hilo-h1--lg">Café Cordillera S.A.</h1>
             <StatusChip tone="success">Al día</StatusChip>
           </div>
-          <p className="hilo-muted">Cédula jurídica 3-101-482915 · Cafetería y tostador · San Pedro de Montes de Oca</p>
+          <p className="hilo-muted">Cédula jurídica 3-101-482915, Cafetería y tostador, San Pedro de Montes de Oca</p>
           <div className="hilo-row hilo-row--wrap">
             {['IVA mensual', 'Planilla CCSS', 'Régimen general', 'Factura electrónica'].map((t) => (
               <StatusChip key={t}>{t}</StatusChip>
@@ -65,7 +65,7 @@ export function ClientView() {
               <h2 id="historial" className="hilo-h2">
                 Historial
               </h2>
-              <span className="hilo-caption">Desde marzo 2022 · 1 284 eventos</span>
+              <span className="hilo-caption">Desde marzo 2022, 1 284 eventos</span>
             </div>
             <Tabs
               aria-label="Filtrar historial"
@@ -143,14 +143,14 @@ export function ClientView() {
               <li>
                 <Avatar name="Andrés Solano" size="s" />
                 <span>
-                  Andrés Solano<span className="hilo-caption">Dueño · +506 8813 2207</span>
+                  Andrés Solano<span className="hilo-caption">Dueño, +506 8813 2207</span>
                 </span>
                 <StatusChip>Principal</StatusChip>
               </li>
               <li>
                 <Avatar name="Mariana Cordero" size="s" />
                 <span>
-                  Mariana Cordero<span className="hilo-caption">Administradora · facturas y planilla</span>
+                  Mariana Cordero<span className="hilo-caption">Administradora, facturas y planilla</span>
                 </span>
               </li>
             </ul>
@@ -170,13 +170,13 @@ export function ClientView() {
               <li>
                 <Avatar name="Luis Jiménez" size="s" />
                 <span>
-                  Luis Jiménez<span className="hilo-caption">Marzo 2022 – septiembre 2026</span>
+                  Luis Jiménez<span className="hilo-caption">De marzo 2022 a septiembre 2026</span>
                 </span>
               </li>
               <li>
                 <Avatar name="Marta Solís" size="s" />
                 <span>
-                  Marta Solís<span className="hilo-caption">Revisa planillas CCSS · desde 2024</span>
+                  Marta Solís<span className="hilo-caption">Revisa planillas CCSS, desde 2024</span>
                 </span>
               </li>
             </ul>

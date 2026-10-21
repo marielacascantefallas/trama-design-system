@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Button, MetricCard, StatusChip, Tabs } from '@trama';
-import { Lock, MessageSquare, Wallet } from 'lucide-react';
+import { Lock, MessageSquare, Wallet } from '../../../shared/icons';
 import { BANK, PROOFS, colones } from '../data';
 import { useStore } from '../store';
 import { payChip } from './Departure';
@@ -21,7 +21,7 @@ export function Payments() {
       <header className="hilo-row hilo-row--between hilo-page__head">
         <div>
           <h1 className="hilo-h1 hilo-h1--lg">Pagos</h1>
-          <p className="hilo-muted">Depósitos y cobros de octubre · SINPE Móvil, tarjeta, efectivo y plataformas</p>
+          <p className="hilo-muted">Depósitos y cobros de octubre, SINPE Móvil, tarjeta, efectivo y plataformas</p>
         </div>
         <div className="hilo-row">
           <Button
@@ -88,7 +88,7 @@ export function Payments() {
                         <span className="hilo-grow-x">
                           <span className="hilo-strong">{b.name}</span>
                           <span className="hilo-caption">
-                            {b.id} · salida de {b.when} · {b.adults + b.kids} personas
+                            {b.id}, salida de {b.when}, {b.adults + b.kids} personas
                           </span>
                         </span>
                         <span className="ruta-amount">{colones(b.deposit ?? 0)}</span>
@@ -148,7 +148,7 @@ export function Payments() {
                     <span className="hilo-grow-x">
                       <span className="hilo-strong">{b.name}</span>
                       <span className="hilo-caption">
-                        {b.id} · {b.when}
+                        {b.id}, {b.when}
                       </span>
                     </span>
                     {payChip(b)}
@@ -167,7 +167,7 @@ export function Payments() {
                 <li>
                   <span className="hilo-caption">SINPE Móvil</span>
                   <span className="hilo-strong">₡222 000</span>
-                  <span className="hilo-caption">8 pagos · {s.linkedBrenes ? 'todos asociados' : '1 sin reserva'}</span>
+                  <span className="hilo-caption">8 pagos, {s.linkedBrenes ? 'todos asociados' : '1 sin reserva'}</span>
                 </li>
                 <li>
                   <span className="hilo-caption">Tarjeta</span>
@@ -177,7 +177,7 @@ export function Payments() {
                 <li>
                   <span className="hilo-caption">Efectivo</span>
                   <span className="hilo-strong">₡30 000</span>
-                  <span className="hilo-caption">1 pago · caja del muelle</span>
+                  <span className="hilo-caption">1 pago, caja del muelle</span>
                 </li>
                 <li>
                   <span className="hilo-caption">Plataformas</span>
@@ -200,14 +200,14 @@ export function Payments() {
               <h2 id="banco" className="hilo-strong">
                 Movimientos del banco
               </h2>
-              <span className="hilo-caption">BAC · 10:15</span>
+              <span className="hilo-caption">BAC, 10:15</span>
             </div>
             <p className="hilo-caption">Entradas por SINPE Móvil de hoy</p>
           </div>
           <ul className="ruta-bank">
             {BANK.map((m) => {
               const brenes = m.id === 'm1';
-              const note = brenes && s.linkedBrenes && created ? `${created.name} · ${created.id}` : m.note;
+              const note = brenes && s.linkedBrenes && created ? `${created.name}, ${created.id}` : m.note;
               return (
                 <li key={m.id}>
                   <span className="hilo-caption ruta-bank__time">{m.time}</span>

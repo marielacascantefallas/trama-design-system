@@ -1,5 +1,15 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": { "baseUrl": ".", "paths": { "@trama": ["../../src/index.ts"] } },
-  "include": ["src"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@trama": [
+        "../../src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "../shared"
+  ]
 }

@@ -1,3 +1,4 @@
+import './styles/fonts.css';
 import './styles/tokens/trama.css';
 import './styles/utilities.css';
 

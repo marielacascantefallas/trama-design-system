@@ -1,0 +1,31 @@
+/* Tema de ejemplo para probar el analizador (marca ficticia «Brisa») */
+:root {
+  --color-brand-50: #F2F7F4;
+  --color-brand-100: #DCEBE2;
+  --color-brand-300: #8CC2A3;
+  --color-brand-500: #3E9B6A;
+  --color-brand-600: #2F8659;
+  --color-brand-700: #1F6A45;
+  --color-brand-900: #0E3B26;
+  --bg-canvas: #FAFAF7;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #F0EFEA;
+  --text-primary: #1C1B19;
+  --text-secondary: #6F6C64;
+  --text-link: #1F6A45;
+  --primary: #1F6A45;
+  --on-primary: #FFFFFF;
+  --border-input: #95938D;
+  --focus-ring: #3E9B6A;
+}
+[data-theme="dark"] {
+  --bg-canvas: #121211;
+  --bg-surface: #1C1B19;
+  --bg-muted: #262522;
+  --text-primary: #F4F3EF;
+  --text-secondary: #8F8C83;
+  --text-link: #8CC2A3;
+  --primary: #1F6A45;
+  --on-primary: #FFFFFF;
+  --border-input: #696863;
+}

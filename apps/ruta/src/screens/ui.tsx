@@ -39,7 +39,3 @@ export function CardHead({
     </div>
   );
 }
-
-export function IconTile({ children, warn }: { children: ReactNode; warn?: boolean }) {
-  return <span className={`ruta-tile ${warn ? 'ruta-tile--warn' : ''}`}>{children}</span>;
-}

@@ -13,7 +13,7 @@ prim={"color":{n:{str(k):C(v) for k,v in r.items()} for n,r in [("anil",anil),("
  "size":{"24":D("24px"),"32":D("32px"),"40":D("40px"),"48":D("48px")},
  "borderWidth":{"1":D("1px"),"2":D("2px")},
  "duration":{"0":D("0ms","duration"),"120":D("120ms","duration"),"200":D("200ms","duration"),"320":D("320ms","duration")},
- "fontFamily":{"sans":{"$type":"fontFamily","$value":"Inter"}},
+ "fontFamily":{"sans":{"$type":"fontFamily","$value":"Instrument Sans"}},
  "fontSize":{str(k):D(f"{k}px") for k in [12,14,16,18,20,24,28,32]},
  "fontWeight":{"regular":{"$type":"fontWeight","$value":400},"medium":{"$type":"fontWeight","$value":500},"semibold":{"$type":"fontWeight","$value":600}}}
 def brand(ramp,r1,r2):

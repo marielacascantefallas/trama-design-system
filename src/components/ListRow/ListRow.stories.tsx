@@ -67,9 +67,9 @@ const DATA: Record<'hilo' | 'ruta', { name: string; items: Item[] }> = {
   ruta: {
     name: 'Reservas de hoy',
     items: [
-      { title: 'Catamarán Ballena', detail: '8:00 a.m. · 12 personas', tone: 'success', label: 'Confirmada' },
-      { title: 'Tour Selva', detail: '1:30 p.m. · 6 personas', tone: 'warning', label: 'Pendiente' },
-      { title: 'Kayak Manglar', detail: '3:00 p.m. · 4 personas', tone: 'neutral', label: 'Borrador' },
+      { title: 'Catamarán Ballena', detail: '8:00 a.m., 12 personas', tone: 'success', label: 'Confirmada' },
+      { title: 'Tour Selva', detail: '1:30 p.m., 6 personas', tone: 'warning', label: 'Pendiente' },
+      { title: 'Kayak Manglar', detail: '3:00 p.m., 4 personas', tone: 'neutral', label: 'Borrador' },
     ],
   },
 };

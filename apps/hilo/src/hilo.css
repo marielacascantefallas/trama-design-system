@@ -660,10 +660,24 @@ a {
   font-size: var(--font-size-18) !important;
 }
 
+/* Cifras del día: una sola franja con divisores, no cuatro tarjetas sueltas. */
 .hilo-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-16);
+  border-top: 1px solid var(--color-border-default);
+  border-bottom: 1px solid var(--color-border-default);
+}
+.hilo-metrics .trama-metric {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  padding: var(--space-12) var(--space-20);
+}
+.hilo-metrics .trama-metric:first-child {
+  padding-left: 0;
+}
+.hilo-metrics .trama-metric + .trama-metric {
+  border-left: 1px solid var(--color-border-default);
 }
 
 .hilo-split {
@@ -1168,6 +1182,13 @@ a {
   }
   .hilo-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hilo-metrics .trama-metric:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .hilo-metrics .trama-metric:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border-default);
   }
 }
 
