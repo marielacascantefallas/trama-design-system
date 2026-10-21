@@ -77,10 +77,16 @@ Accesibilidad: el diálogo atrapa el foco y lo devuelve; al quitar una fila, el 
 
 ```bash
 npm run dev-lab-deshacer
-npm run build-lab   # construye los dos experimentos en storybook-static/lab
+npm run build-lab   # construye los experimentos en storybook-static/lab
 ```
 
 En línea: https://marielacascantefallas.github.io/trama-design-system/lab/deshacer/
+
+## Laboratorio: Confianza de la IA
+
+`apps/lab-confianza` pone a prueba tres formas de mostrar un resumen hecho por IA: solo el texto, con un nivel de confianza y con la fuente de cada frase. Cada forma tiene su propia ronda de 4 casos con las conversaciones del prototipo de Hilo; en cada ronda, dos resúmenes dicen algo que el cliente nunca escribió. Los resúmenes, las fuentes y la confianza están escritos y anotados a mano para el experimento (`src/cases.ts`). Al final compara los errores encontrados, las falsas alarmas y los segundos por caso de quien lo usa, sin guardarlos.
+
+En línea: https://marielacascantefallas.github.io/trama-design-system/lab/confianza/
 
 ## Tokens en capas
 

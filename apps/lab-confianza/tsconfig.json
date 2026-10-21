@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@trama": [
+        "../../src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "../shared"
+  ]
+}

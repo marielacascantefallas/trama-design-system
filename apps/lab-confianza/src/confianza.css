@@ -1,0 +1,44 @@
+/* Confianza de la IA. Usa lab.css y la base de deshacer.css. */
+.cf-modes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 8px; padding: 12px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.cf-modes__label { font-weight: 700; margin-right: 4px; }
+.cf-modes [role='tablist'] { display: flex; flex-wrap: wrap; gap: 4px; }
+.cf-count { font-weight: 400; }
+
+.cf-case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; margin-top: 24px; align-items: start; }
+.cf-chat { padding: 16px; border-radius: 12px; }
+.cf-chat__title { font: 600 16px var(--font-family-sans), sans-serif; color: var(--color-text-primary); }
+.cf-chat__title:focus { outline: none; }
+.cf-chat__title:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.cf-chat__sub { font-size: 13px; color: var(--color-text-secondary); margin: 2px 0 12px; }
+.cf-msgs { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.cf-msgs li { display: flex; flex-direction: column; border-radius: 14px; }
+.cf-msgs li.is-source > * { box-shadow: 0 0 0 3px var(--color-focus-ring); }
+
+.cf-ai { font-family: var(--font-family-sans), sans-serif; }
+.cf-progress { font: 14px 'Atkinson Hyperlegible', sans-serif; color: var(--ink-soft); margin-bottom: 8px; }
+.cf-conf { margin-bottom: 8px; }
+.cf-summary { font-size: 15px; line-height: 1.5; }
+.cf-claims { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.cf-claims li { padding: 4px 0 4px 12px; border-left: 3px solid var(--color-action-primary); font-size: 15px; cursor: default; }
+.cf-claims li:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.cf-claims small { display: block; font-size: 12px; color: var(--color-text-secondary); }
+.cf-claims li.is-unsourced { border-left-color: var(--color-status-danger); }
+.cf-claims li.is-unsourced small { color: var(--color-status-danger); font-weight: 600; }
+
+.cf-verdict { display: grid; gap: 4px; justify-items: start; margin-top: 14px; padding: 14px 16px; border-left: 4px solid; border-radius: 0 8px 8px 0; background: var(--well); font-family: 'Atkinson Hyperlegible', sans-serif; }
+.cf-verdict:focus { outline: none; }
+.cf-verdict:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.cf-verdict.is-right { border-color: var(--pass); }
+.cf-verdict.is-right strong { color: var(--pass); }
+.cf-verdict.is-wrong { border-color: var(--fail); }
+.cf-verdict.is-wrong strong { color: var(--fail); }
+.cf-verdict span { color: var(--ink-soft); margin-bottom: 8px; }
+.cf-ai .note { margin-top: 12px; }
+.cf-reset { margin-top: 8px; }
+.cf-why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 14px; }
+.cf-why > div { border-top: 2px solid var(--ink); padding-top: 12px; }
+
+@media (max-width: 900px) {
+  .cf-case, .cf-why { grid-template-columns: minmax(0, 1fr); }
+  .cf-modes .tab { padding: 0 12px; }
+}
